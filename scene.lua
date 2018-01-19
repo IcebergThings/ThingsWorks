@@ -62,7 +62,7 @@ SceneManager.draw = function()
   sc.draw()
 --  love.graphics.setCanvas()
   love.graphics.pop()
-  love.graphics.draw(sc.canvas)
+--  love.graphics.draw(sc.canvas)
 end
 
 return SceneManager

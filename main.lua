@@ -7,6 +7,7 @@ function love.load()
   love.graphics.setFont(font)
 
   MainScene = require("MainScene")
+  MainScene.SceneManager = SceneManager
   SceneManager.load(MainScene)
 end
 
