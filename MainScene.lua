@@ -1,3 +1,6 @@
+-- Demo game for all these stuff
+-- This is the title screen, which is the entry of game
+
 local SceneManager = require("scene")
 local Button = require "button"
 
@@ -5,20 +8,17 @@ self = SceneManager.newScene(love.graphics.getWidth(), love.graphics.getHeight()
 
 local btn0, btn1, btn2
 
-btn0 = Button.new(15,15,200,50)
-btn0.title = "Hello Button"
+btn0 = Button.new(220,240,200,40)
+btn0.title = "New Game"
 
-btn1 = Button.new(15,65,100,50)
-btn1.title = "Disabled"
+btn1 = Button.new(220,290,200,40)
+btn1.title = "Load Game"
 btn1.disabled = true
 
-btn2 = Button.new(15,200,200,100)
-btn2.title = "Large"
-btn2.text_scale_x = 1
-btn2.text_scale_y = 1
+btn2 = Button.new(220,340,200,40)
+btn2.title = "Exit"
 btn2.callback = function()
-  btn2.w = btn2.w + 1
-  btn2.h = btn2.h + 1
+  love.event.quit()
 end
 
 self.mousepressed = function(x, y, button, isTouch)
@@ -40,7 +40,7 @@ self.update = function(dt)
 end
 
 self.draw = function()
-  love.graphics.print("Hello World 中文爆炸", 400, 300)
+  love.graphics.printf("TANK WAR", 200, 100, 240, "center")
 
   btn0.draw()
   btn1.draw()
