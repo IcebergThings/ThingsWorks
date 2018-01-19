@@ -7,15 +7,16 @@ local Button = require "button"
 self = SceneManager.newScene(love.graphics.getWidth(), love.graphics.getHeight())
 
 local btn0, btn1, btn2
+local title_img = love.graphics.newImage("TankWarsTitle.png")
 
-btn0 = Button.new(220,240,200,40)
+btn0 = Button.new(220,290,200,40)
 btn0.title = "New Game"
 
-btn1 = Button.new(220,290,200,40)
+btn1 = Button.new(220,335,200,40)
 btn1.title = "Load Game"
 btn1.disabled = true
 
-btn2 = Button.new(220,340,200,40)
+btn2 = Button.new(220,380,200,40)
 btn2.title = "Exit"
 btn2.callback = function()
   love.event.quit()
@@ -40,7 +41,7 @@ self.update = function(dt)
 end
 
 self.draw = function()
-  love.graphics.printf("TANK WAR", 200, 100, 240, "center")
+  love.graphics.draw(title_img)
 
   btn0.draw()
   btn1.draw()
