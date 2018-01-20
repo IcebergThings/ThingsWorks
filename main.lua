@@ -1,4 +1,7 @@
-local SceneManager = require "scene"
+-- Setup global variable
+SceneManager = require "scene"
+
+-- Setup local
 local MainScene
 
 function love.load()
@@ -6,8 +9,7 @@ function love.load()
   font:setFilter("linear", "linear")
   love.graphics.setFont(font)
 
-  MainScene = require("MainScene")
-  MainScene.SceneManager = SceneManager
+  MainScene = require("MainScene")(SceneManager)
   SceneManager.load(MainScene)
 end
 
