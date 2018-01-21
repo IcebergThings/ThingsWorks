@@ -27,7 +27,7 @@ function MapScene()
 	)
 	Tiles.zoom = 32
 
-	local sprite = require("sprite").new(love.graphics.newImage("TankWarsTiles.png"), 8, 4)
+	local sprite = require("Sprite").new(love.graphics.newImage("TankWarsTiles.png"), 8, 4)
 	sprite.x = 320
 	sprite.y = 240
 	sprite.zoom_x = 5

@@ -2,7 +2,7 @@
 -- This is the title screen, which is the entry of game
 
 function MainScene()
-	local Button = require "button"
+	local Button = require "Button"
 
 	local self = SceneManager.newScene(love.graphics.getWidth(), love.graphics.getHeight())
 

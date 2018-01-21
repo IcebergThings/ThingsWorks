@@ -1,5 +1,5 @@
 -- Setup global variable
-SceneManager = require "scene"
+SceneManager = require "SceneManager"
 
 -- Setup local
 local MainScene
