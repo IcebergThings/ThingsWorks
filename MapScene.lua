@@ -27,6 +27,8 @@ function MapScene()
   )
   Tiles.zoom = 32
 
+	local sprite = require("sprite").new(love.graphics.newImage("TankWarsTitle.png"))
+
   local count = 0
 
   self.update = function()
@@ -34,12 +36,17 @@ function MapScene()
     Tiles.x = math.sin(count) * 10 + 50
     Tiles.y = math.cos(count) * 10 + 50
     Tiles.zoom = math.sin(count) * 10 + 32
+		sprite.x = math.sin(count) * 10 + 320
+		sprite.y = math.cos(count) * 10 + 240
+		sprite.zoom_x = Tiles.zoom / 100
+		sprite.zoom_y = math.sin(count)
+		sprite.orientation = count * 0.1
   end
 
   self.draw = function()
-    love.graphics.print("MapScene", 10, 10)
-
     Tiles.draw()
+		sprite.draw()
+    love.graphics.print("MapScene", 10, 10)
   end
 
   return self
