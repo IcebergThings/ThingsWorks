@@ -40,12 +40,12 @@ function MapScene()
 		Tiles.x = math.sin(count) * 10 + 50
 		Tiles.y = math.cos(count) * 10 + 50
 		Tiles.zoom = math.sin(count) * 10 + 32
-		sprite.set_frame(math.floor(count) % 4 + 24)
+		sprite:set_frame(math.floor(count) % 4 + 24)
 	end
 
 	self.draw = function()
 		Tiles.draw()
-		sprite.draw()
+		sprite:draw()
 		love.graphics.print("MapScene", 10, 10)
 	end
 
