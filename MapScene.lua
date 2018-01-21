@@ -22,8 +22,8 @@ function MapScene()
       -1,20,-1,9,20,-1,-1,-1,
       -1,8,-1,8,8,-1,-1,20,
       0,-1,17,-1,-1,-1,-1,8}},
-    {{tex = tilesA, w = 8, h = 3},
-     {tex = tilesA, w = 8, h = 3}}
+    {{tex = tilesA, w = 8, h = 4},
+     {tex = tilesA, w = 8, h = 4}}
   )
   Tiles.zoom = 32
 
