@@ -1,5 +1,23 @@
 local TiledMap = {}
 
+TiledMap.new_from_file = function (filename, texture)
+	local reader = require("BinaryFile").new_reader(filename)
+	reader.i32()
+	reader.i32()
+	local w = reader.i32()
+	local h = reader.i32()
+	local layers = reader.i32()
+	local map = {}
+	for l = 1, layers do
+		map[l] = {}
+		for i = 1, w * h do
+			reader.u16()
+			map[l][i] = reader.u16()
+		end
+	end
+	return TiledMap.new(w, h, layers, map, texture)
+end
+
 TiledMap.new = function (w, h, layers, map, texture)
 
 	local self = {}
