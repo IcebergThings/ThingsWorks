@@ -26,6 +26,7 @@ function MapScene()
 		 {tex = tilesA, w = 8, h = 4}}
 	)
 	Tiles.zoom = 32
+	Tiles.save("Map001.dat")
 
 	local sprite = require("Sprite").new(tilesA, 8, 4)
 	sprite.x = 0

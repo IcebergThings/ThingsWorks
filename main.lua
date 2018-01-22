@@ -1,4 +1,4 @@
--- Setup global variable
+-- Setup global variables
 SceneManager = require "SceneManager"
 
 -- Setup local

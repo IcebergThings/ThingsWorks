@@ -87,6 +87,24 @@ TiledMap.new = function (w, h, layers, map, texture)
 		love.graphics.pop()
 	end
 
+	self.save = function (filename)
+		local writer = require("binaryfile").new_writer(filename)
+		writer.i32(0x57a7d4a3) -- ThingsWorks magic number
+		writer.i32(0x70614dff) -- "\xffMap"
+		writer.i32(self.w)
+		writer.i32(self.h)
+		writer.i32(layers)
+		for l = 1, layers do
+			for i = 1, self.w * self.h do
+				writer.u8(0) -- variant type
+				writer.u8(0) -- texture id, unsupported
+				local tile = self.map[l][i]
+				writer.u16(tile)
+			end
+		end
+		writer.close()
+	end
+
 	return self
 end
 
